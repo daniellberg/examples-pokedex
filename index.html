@@ -101,9 +101,14 @@
                               <img className="avatar center-block"
                                       src={src}/></a></div>
                           <div className="panel-footer">
-                              <div className="text-center"><a href="/grass"><span
-                                          className="label type type-grass">Grass</span></a><a href="/poison"><span
-                                          className="label type type-poison">Poison</span></a></div>
+                            <div className="text-center">
+                                {pokemon.type.map((type) => {
+                                  const className = 'label type type-' + type.toLowerCase()
+                                  return (
+                                    <span key={type} className={className}>{type}</span>
+                                  );
+                                })}
+                              </div>
                           </div>
                       </div>
                   </div>
